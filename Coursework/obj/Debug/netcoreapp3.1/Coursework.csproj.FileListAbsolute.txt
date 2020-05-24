@@ -1,0 +1,13 @@
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\Coursework.exe
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\Coursework.deps.json
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\Coursework.runtimeconfig.json
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\Coursework.runtimeconfig.dev.json
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\Coursework.dll
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\Coursework.pdb
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.csprojAssemblyReference.cache
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.csproj.CoreCompileInputs.cache
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.AssemblyInfoInputs.cache
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.AssemblyInfo.cs
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.dll
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.pdb
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.genruntimeconfig.cache
