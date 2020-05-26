@@ -10,7 +10,7 @@ namespace Coursework
     {
         private WeaponContext Weapon = new WeaponContext();
         private TargetContext Target = new TargetContext();
-        private double X, Y, Distance;
+        private double Distance;
         public bool MakeChoice() 
         {
             string Choice;
@@ -55,18 +55,25 @@ namespace Coursework
         }
         private void SetDistance()
         {
-            string Dis;
             Console.WriteLine("Введите на какое растояние отойти");
             while (true)
             {
-                Dis = Console.ReadLine();
-                if (double.TryParse(Dis, out Distance)) { if (Distance > 0) { break; } }
+                if (double.TryParse(Console.ReadLine(), out Distance)) { if (Distance > 0) { break; } }
                 Console.WriteLine("Вы ввели неправильно. Попробуйте снова.");
             }
         }
         private void Shoot()
         {
-
+            Console.WriteLine("Введите координату Х потом Y");
+            double X, Y;
+            while (true)
+            {
+                if (double.TryParse(Console.ReadLine(), out X) && double.TryParse(Console.ReadLine(), out Y)) { break; }
+                Console.WriteLine("Вы ввели неправильно. Попробуйте снова.");
+            }
+            Weapon.HitCoordinates(ref X, ref Y, Distance);
+            int Score = Target.GetScore(X, Y);
+            Console.WriteLine("{0}", Score);
         }
     }
 }

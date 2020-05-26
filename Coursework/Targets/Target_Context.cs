@@ -11,5 +11,9 @@ namespace Coursework.Targets
         {
             this.Trg = Trg;
         }
+        public int GetScore(double X, double Y)
+        {
+            return Trg.GetScore(X, Y);
+        }
     }
 }
