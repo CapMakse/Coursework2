@@ -10,9 +10,9 @@ namespace Coursework.Targets
         public override int GetScore(double X, double Y)
         {
             int Score = 0;
+            CheckHit(X, Y, ref Score);
             CheckHearthShoot(X, Y, ref Score);
             CheckHeadShoot(X, Y, ref Score);
-            CheckHit(X, Y, ref Score);
             return Score;
         }
         protected override void CheckHit(double X, double Y, ref int Score) {
@@ -49,7 +49,7 @@ namespace Coursework.Targets
         }
         private bool CheckHeadRingHit(double X, double Y, int XRadius, int YRadius, int CenterHeight)
         {
-            return (Math.Pow((X / XRadius), 4) + Math.Pow(((Y - CenterHeight) / YRadius), 2)) <= 1;
+            return (Math.Pow((X / XRadius), 4) + Math.Pow(((Y - CenterHeight) / YRadius), 2)) < 1;
         }
     }
 }
