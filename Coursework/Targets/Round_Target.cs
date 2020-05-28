@@ -6,7 +6,7 @@ namespace Coursework.Targets
 {
     class RoundTarget : Target
     {
-        protected override void CheckHit(double X, double Y, ref int Score)
+        protected override bool CheckHit(double X, double Y, ref int Score)
         {
             Score = 0;
             for (int TargetRingRadius = 300; TargetRingRadius >= 75; TargetRingRadius -= 25)
@@ -14,8 +14,9 @@ namespace Coursework.Targets
                 if (CheckRingHit(X, Y, TargetRingRadius)) { Score++; }
                 else break;
             }
+            return Score > 0;
         }
-        private bool CheckRingHit(double X, double Y, int Radius)
+        protected bool CheckRingHit(double X, double Y, int Radius)
         {
             return (Math.Pow((X / Radius), 2) + Math.Pow(((Y - 300) / Radius), 2)) <= 1;
         }

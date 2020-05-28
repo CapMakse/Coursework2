@@ -15,5 +15,9 @@ namespace Coursework.Targets
         {
             return Trg.GetScore(X, Y);
         }
+        public bool CheckTarget()
+        {
+            return Trg == null;
+        }
     }
 }

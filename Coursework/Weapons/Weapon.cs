@@ -11,7 +11,7 @@ namespace Coursework.Weapons
         public void HitCoordinates(ref double X, ref double Y, double Distance)
         {
             WeaponScatter(ref X, ref Y, Distance);
-            BulletBallistics(ref X, Distance);
+            BulletBallistics(ref Y, Distance);
         }
         protected void WeaponScatter(ref double X, ref double Y, double Distance)
         {
@@ -21,9 +21,9 @@ namespace Coursework.Weapons
             X += NewRadius * Math.Cos(NewAngle);
             Y += NewRadius * Math.Sin(NewAngle);
         }
-        protected void BulletBallistics(ref double X, double Distance)
+        protected void BulletBallistics(ref double Y, double Distance)
         {
-            X -= Math.Pow((Distance / BulletEnergy), 3);
+            Y -= Math.Pow((Distance / BulletEnergy), 3);
         }
     }
 }

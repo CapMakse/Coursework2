@@ -9,9 +9,9 @@ namespace Coursework.Targets
         public virtual int GetScore(double X, double Y)
         {
             int Score = 0;
-            CheckHit(X, Y, ref Score);
-            return Score;
+            if (CheckHit(X, Y, ref Score)) return Score;
+            return 0;
         }
-        protected abstract void CheckHit(double X, double Y, ref int Score);
+        protected abstract bool CheckHit(double X, double Y, ref int Score);
     }
 }
