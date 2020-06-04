@@ -8,6 +8,7 @@ namespace Coursework.Weapons
     {
         protected double Radius;
         protected double BulletEnergy;
+        protected string TypeName;
         public void GetHitCoordinates(ref double X, ref double Y, int Distance)
         {
             WeaponScatter(ref X, ref Y, Distance);
@@ -25,6 +26,9 @@ namespace Coursework.Weapons
         {
             Y -= Math.Pow((Distance / BulletEnergy), 3);
         }
-        public abstract string GetTypeName();
+        public string GetTypeName()
+        {
+            return TypeName;
+        }
     }
 }
