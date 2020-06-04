@@ -1,4 +1,5 @@
-﻿using Coursework.Targets;
+﻿using Coursework.Leaderboard;
+using Coursework.Targets;
 using Coursework.Weapons;
 using System;
 using System.Collections.Generic;
@@ -8,21 +9,23 @@ namespace Coursework
 {
     class Rifleman
     {
+        private readonly LeaderBoard Board = LeaderBoard.GetInstance();
         private Weapon Weapon;
         private readonly TargetContext Target = new TargetContext();
-        private double Distance;
+        private int Distance = 1;
         public bool MakeChoice() 
         {
             string Choice;
             Console.WriteLine("Что вы желаете сделать?");
-            Console.WriteLine("1 - Сменить оружие\n2 - Сменить мишень\n3 - Выбрать растояние до мишени\n4 - Стрелять\n5 - Закончить");
+            Console.WriteLine("1 - Сменить оружие\n2 - Сменить мишень\n3 - Выбрать растояние до мишени\n4 - Стрелять\n5 - Посмотреть таблицу лидеров\n6 - Закончить");
             while (true)
             {
                 
                 Choice = Console.ReadLine();
-                if (Choice == "5") { return false; }
+                if (Choice == "6") { return false; }
                 else if (Choice == "4") { Shoot(); break; }
-                else if(Choice == "3" || Choice == "выбрать растояние") { SetDistance(); break; }
+                else if (Choice == "5") { Board.LoadRecord(); break; }
+                else if (Choice == "3") { SetDistance(); break; }
                 else if (Choice == "2") { SetTarget(); break; }
                 else if (Choice == "1") { SetWeapon(); break; }
                 else Console.WriteLine("Вы ввели неправильно. Попробуйте снова.");
@@ -61,7 +64,7 @@ namespace Coursework
             Console.WriteLine("Введите на какое растояние отойти");
             while (true)
             {
-                if (double.TryParse(Console.ReadLine(), out Distance)) { if (Distance > 0) { break; } }
+                if (int.TryParse(Console.ReadLine(), out Distance)) { if (Distance > 0) { break; } }
                 Console.WriteLine("Вы ввели неправильно. Попробуйте снова.");
             }
         }
@@ -82,13 +85,19 @@ namespace Coursework
                     if (double.TryParse(Console.ReadLine(), out X) && double.TryParse(Console.ReadLine(), out Y)) { break; }
                     Console.WriteLine("Вы ввели неправильно. Попробуйте снова.");
                 }
-                Weapon.HitCoordinates(ref X, ref Y, Distance);
+                Weapon.GetHitCoordinates(ref X, ref Y, Distance);
                 int ShotScore = Target.GetScore(X, Y);
                 Score += ShotScore;
                 Console.WriteLine("Количество очков за {0} выстрел: {1}", Shot, ShotScore);
-                Console.WriteLine("Вы попали в X: {0}, Y: {1}", X, Y);
+                Console.WriteLine("Вы попали в X: {0}, Y: {1}", Math.Round(X, 2), Math.Round(Y, 2));
             }
             Console.WriteLine("Всего вы набрали {0} очков", Score);
+            Console.WriteLine("Желаете сохранить результат? 1 - Да");
+            if (Console.ReadLine() == "1")
+            {
+                Console.WriteLine("Введите имя стрелка");
+                Board.SaveRecord(Console.ReadLine(), Weapon.GetTypeName(), Target.GetTypeName(), Score, Distance);
+            }
         }
     }
 }

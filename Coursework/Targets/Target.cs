@@ -13,5 +13,6 @@ namespace Coursework.Targets
             return 0;
         }
         protected abstract bool CheckHit(double X, double Y, ref int Score);
+        public abstract string GetTypeName();
     }
 }

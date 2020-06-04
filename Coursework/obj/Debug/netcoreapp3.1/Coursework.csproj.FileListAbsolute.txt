@@ -5,9 +5,16 @@ C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\Coursewo
 C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\Coursework.dll
 C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\Coursework.pdb
 C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.csprojAssemblyReference.cache
-C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.csproj.CoreCompileInputs.cache
 C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.AssemblyInfoInputs.cache
 C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.AssemblyInfo.cs
 C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.dll
 C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.pdb
 C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.genruntimeconfig.cache
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.csproj.CoreCompileInputs.cache
+C:\Users\Max\Desktop\KPI\Coursework2\Coursework\obj\Debug\netcoreapp3.1\Coursework.csproj.CopyComplete

@@ -20,5 +20,9 @@ namespace Coursework.Targets
         {
             return (Math.Pow((X / Radius), 2) + Math.Pow(((Y - 300) / Radius), 2)) <= 1;
         }
+        public override string GetTypeName()
+        {
+            return "Круг";
+        }
     }
 }

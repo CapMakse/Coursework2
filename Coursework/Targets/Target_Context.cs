@@ -19,5 +19,9 @@ namespace Coursework.Targets
         {
             return Trg == null;
         }
+        public string GetTypeName()
+        {
+            return Trg.GetTypeName();
+        }
     }
 }

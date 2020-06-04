@@ -58,5 +58,9 @@ namespace Coursework.Targets
         {
             return (Math.Pow((X / XRadius), 4) + Math.Pow(((Y - CenterHeight) / YRadius), 2)) < 1;
         }
+        public override string GetTypeName()
+        {
+            return "Человек";
+        }
     }
 }
