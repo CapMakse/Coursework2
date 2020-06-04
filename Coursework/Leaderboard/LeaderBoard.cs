@@ -38,8 +38,8 @@ namespace Coursework.Leaderboard
             Console.WriteLine("Введите имя игрока результаты которого хотите посмотреть.\n(ничего не вводите если хотите посмотреть все результаты)");
             string Name = Console.ReadLine();
             if (Name != "") Records = Records.Where(Record => Record.Name.ToString() == Name);
-            Console.WriteLine("Введите число результатов которое хотите видеть.");
-            if (!(Int32.TryParse(Console.ReadLine(), out int Count) && Count > 0)) Count = 100;
+            Console.WriteLine("Введите число результатов которое хотите видеть. (По умолчанию 10)");
+            if (!(Int32.TryParse(Console.ReadLine(), out int Count) && Count > 0)) Count = 10;
             foreach (var Record in Records.Take(Count))
                 Console.WriteLine("Игрок {0} стреляя по мишени \"{1}\" из оружия \"{2}\", набрал {3} очков с растояния {4} м.", Record.Name, Record.Target, Record.Weapon, Record.Score, Record.Distance);
         }
