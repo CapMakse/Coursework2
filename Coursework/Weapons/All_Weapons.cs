@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Coursework.Weapons
+﻿namespace Coursework.Weapons
 {
     class Pistol : Weapon
     {

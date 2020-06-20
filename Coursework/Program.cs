@@ -2,7 +2,6 @@
 using Coursework.Targets;
 using Coursework.Weapons;
 using System;
-using System.Data;
 
 namespace Coursework
 {
@@ -11,7 +10,7 @@ namespace Coursework
         static void Main(string[] args)
         {
             Rifleman gunner = new Rifleman();
-            while (gunner.MakeChoice()) { }
+            gunner.Play();
         }
     }
 }
