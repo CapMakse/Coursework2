@@ -4,4 +4,5 @@
   <Record Name="СapMap" Weapon="Снайперская винтовка" Target="Круг" Score="59" Distance="140" />
   <Record Name="414" Weapon="Автомат" Target="Человек" Score="15" Distance="13" />
   <Record Name="1" Weapon="Автомат" Target="Круг" Score="94" Distance="12" />
+  <Record Name="Cap.Map" Weapon="Снайперская винтовка" Target="Человек" Score="74" Distance="100" />
 </Records>

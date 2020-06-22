@@ -5,16 +5,27 @@ using System;
 
 namespace Coursework
 {
+    /// <summary>
+    /// Класс стрелка
+    /// </summary>
     class Rifleman
     {
         private readonly LeaderBoard Board = LeaderBoard.GetInstance();
+        private readonly DrawTarget Drawer = DrawTarget.GetInstance();
         private readonly TargetContext Target = new TargetContext();
         private Weapon Weapon;
         private int Distance = 1;
+        /// <summary>
+        /// Запустить игру
+        /// </summary>
         public void Play()
         {
             while (MakeChoice()) { }
         }
+        /// <summary>
+        /// Выбрать что игрок будет делать
+        /// </summary>
+        /// <returns>Возвращает false если игрок решил завершить игру, иначе true</returns>
         private bool MakeChoice() 
         {
             string Choice;
@@ -33,6 +44,9 @@ namespace Coursework
             }
             return true;
         }
+        /// <summary>
+        /// Выбрать оружие
+        /// </summary>
         private void SetWeapon()
         {
             string Weap;
@@ -40,13 +54,16 @@ namespace Coursework
             Console.WriteLine("1 - Пистолет\n2 - Автомат\n3 - Снайперская винтовка");
             while (true)
             {
-                Weap = Console.ReadLine().ToLower().Trim(' ');
+                Weap = Console.ReadLine();
                 if (Weap == "1") { WeaponFactory PistolFactory = new PistolFactory(); Weapon = PistolFactory.GetWeapon(); break; }
                 else if (Weap == "2") { WeaponFactory AsRifFact = new AssaultRifleFactory(); Weapon = AsRifFact.GetWeapon(); break; }
                 else if (Weap == "3") { WeaponFactory SnipRifFact = new SniperRifleFactory(); Weapon = SnipRifFact.GetWeapon(); break; }
                 else Console.WriteLine("Вы ввели неправильно. Попробуйте снова.");
             }
         }
+        /// <summary>
+        /// Выбрать мишень
+        /// </summary>
         private void SetTarget()
         {
             string Trg;
@@ -54,12 +71,15 @@ namespace Coursework
             Console.WriteLine("1 - Круглая\n2 - Человек");
             while (true)
             {
-                Trg = Console.ReadLine().ToLower().Trim(' ');
+                Trg = Console.ReadLine();
                 if (Trg == "1") { Target.SetTarget(new RoundTarget()); break; }
                 else if (Trg == "2") { Target.SetTarget(new HumanTarget()); break; }
                 else Console.WriteLine("Вы ввели неправильно. Попробуйте снова.");
             }
         }
+        /// <summary>
+        /// Выбрать растояние до мишени
+        /// </summary>
         private void SetDistance()
         {
             Console.WriteLine("Введите на какое растояние отойти");
@@ -69,9 +89,12 @@ namespace Coursework
                 Console.WriteLine("Вы ввели неправильно. Попробуйте снова.");
             }
         }
+        /// <summary>
+        /// Начать стрельбу
+        /// </summary>
         private void Shoot()
         {
-            if (Weapon == null || Target.CheckTarget())
+            if (Weapon == null || Target.CheckLackTarget())
             {
                 Console.WriteLine("Сначала выберите оружие/мишень/растояние.");
                 return;
@@ -79,7 +102,7 @@ namespace Coursework
             double X, Y;
             int Score = 0;
             Console.Clear();
-            DrawTarget.Draw(Target.GetTypeName() + ".jpg");
+            Drawer.Draw(Target.GetTypeName() + ".jpg");
             for (int Shot = 1; Shot < 11; Shot++)
             {
                 while (true)

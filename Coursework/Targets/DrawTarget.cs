@@ -4,8 +4,22 @@ using System.Drawing;
 
 namespace Coursework.Targets
 {
+    /// <summary>
+    /// Класс который рисует мишень в консоли
+    /// </summary>
     class DrawTarget
     {
+        private static readonly DrawTarget Instance = new DrawTarget();
+        private DrawTarget() { }
+        /// <summary>
+        /// Возвращает единственный екземпляр класса
+        /// </summary>
+        /// <returns>Екземпляр класса</returns>
+        public static DrawTarget GetInstance()
+        {
+            return Instance;
+        }
+
         [DllImport("user32.dll")]
         private static extern IntPtr GetDC(IntPtr hWnd);
 
@@ -18,11 +32,14 @@ namespace Coursework.Targets
         [DllImport("gdi32.dll")]
         private static extern IntPtr DeleteDC(IntPtr hDc);
 
-        
-        public static void Draw(string FileName)
+        /// <summary>
+        /// Рисует в консоли рисунок из файла
+        /// </summary>
+        /// <param name="FileName">Имя файла</param>
+        public void Draw(string FileName)
         {
-            IntPtr hWnd = IntPtr.Zero;
-            IntPtr hDC = IntPtr.Zero;
+            IntPtr hWnd;
+            IntPtr hDC;
             hWnd = GetConsoleWindow();
             if (hWnd != IntPtr.Zero)
             {

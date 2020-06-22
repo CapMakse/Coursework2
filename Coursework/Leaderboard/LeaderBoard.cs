@@ -5,6 +5,9 @@ using System.IO;
 
 namespace Coursework.Leaderboard
 {
+    /// <summary>
+    /// Класс таблицы лидеров
+    /// </summary>
     class LeaderBoard 
     {
         private static readonly LeaderBoard Instance = new LeaderBoard();
@@ -14,10 +17,22 @@ namespace Coursework.Leaderboard
             if (File.Exists("Records.xml")) RecordsDoc = XDocument.Load("Records.xml");
             else RecordsDoc = new XDocument(new XElement("Records"));
         }
+        /// <summary>
+        /// Возвращает единственный екземпляр класса
+        /// </summary>
+        /// <returns>Екземпляр класса</returns>
         public static LeaderBoard GetInstance()
         {
             return Instance;
         }
+        /// <summary>
+        /// Сохраняет рекорд
+        /// </summary>
+        /// <param name="Name">Имя игрока</param>
+        /// <param name="Weapon">Тип оружия</param>
+        /// <param name="Target">Тип мишени</param>
+        /// <param name="Score">Количество очков</param>
+        /// <param name="Distance">Растояние до мишени</param>
         public void SaveRecord(string Name, string Weapon, string Target, int Score, int Distance)
         {
             XElement Record = new XElement("Record",
@@ -29,6 +44,9 @@ namespace Coursework.Leaderboard
             RecordsDoc.Root.Add(Record);
             RecordsDoc.Save("Records.xml");
         }
+        /// <summary>
+        /// Выводит на консоль таблицу рекордов
+        /// </summary>
         public void LoadRecord()
         {
            var Records = from rec in RecordsDoc.Descendants("Record")

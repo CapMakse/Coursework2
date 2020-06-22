@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Coursework</name>
+    </assembly>
+    <members>
+        <member name="T:Coursework.Leaderboard.LeaderBoard">
+            <summary>
+            Класс таблицы лидеров
+            </summary>
+        </member>
+        <member name="M:Coursework.Leaderboard.LeaderBoard.GetInstance">
+            <summary>
+            Возвращает единственный екземпляр класса
+            </summary>
+            <returns>Екземпляр класса</returns>
+        </member>
+        <member name="M:Coursework.Leaderboard.LeaderBoard.SaveRecord(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Сохраняет рекорд
+            </summary>
+            <param name="Name">Имя игрока</param>
+            <param name="Weapon">Тип оружия</param>
+            <param name="Target">Тип мишени</param>
+            <param name="Score">Количество очков</param>
+            <param name="Distance">Растояние до мишени</param>
+        </member>
+        <member name="M:Coursework.Leaderboard.LeaderBoard.LoadRecord">
+            <summary>
+            Выводит на консоль таблицу рекордов
+            </summary>
+        </member>
+        <member name="T:Coursework.Rifleman">
+            <summary>
+            Класс стрелка
+            </summary>
+        </member>
+        <member name="M:Coursework.Rifleman.Play">
+            <summary>
+            Запустить игру
+            </summary>
+        </member>
+        <member name="M:Coursework.Rifleman.MakeChoice">
+            <summary>
+            Выбрать что игрок будет делать
+            </summary>
+            <returns>Возвращает false если игрок решил завершить игру, иначе true</returns>
+        </member>
+        <member name="M:Coursework.Rifleman.SetWeapon">
+            <summary>
+            Выбрать оружие
+            </summary>
+        </member>
+        <member name="M:Coursework.Rifleman.SetTarget">
+            <summary>
+            Выбрать мишень
+            </summary>
+        </member>
+        <member name="M:Coursework.Rifleman.SetDistance">
+            <summary>
+            Выбрать растояние до мишени
+            </summary>
+        </member>
+        <member name="M:Coursework.Rifleman.Shoot">
+            <summary>
+            Начать стрельбу
+            </summary>
+        </member>
+        <member name="T:Coursework.Targets.DrawTarget">
+            <summary>
+            Класс который рисует мишень в консоли
+            </summary>
+        </member>
+        <member name="M:Coursework.Targets.DrawTarget.GetInstance">
+            <summary>
+            Возвращает единственный екземпляр класса
+            </summary>
+            <returns>Екземпляр класса</returns>
+        </member>
+        <member name="M:Coursework.Targets.DrawTarget.Draw(System.String)">
+            <summary>
+            Рисует в консоли рисунок из файла
+            </summary>
+            <param name="FileName">Имя файла</param>
+        </member>
+        <member name="T:Coursework.Targets.HumanTarget">
+            <summary>
+            Класс мишени "Человек"
+            </summary>
+        </member>
+        <member name="M:Coursework.Targets.HumanTarget.CheckBodyHit(System.Double,System.Double,System.Int32@)">
+            <summary>
+            Проверяет попал ли игрок в тело и в какую именно часть, и соответстующе изменяет количество очков
+            </summary>
+            <param name="X">Горизонтальная координата</param>
+            <param name="Y">Вертикальная координата</param>
+            <param name="Score">Количество очков за выстрел</param>
+            <returns>True если набрал очки, иначе false</returns>
+        </member>
+        <member name="M:Coursework.Targets.HumanTarget.CheckHeadShoot(System.Double,System.Double,System.Int32@)">
+            <summary>
+            Проверяет попал ли игрок в голову и в какую именно часть, и соответстующе изменяет количество очков
+            </summary>
+            <param name="X">Горизонтальная координата</param>
+            <param name="Y">Вертикальная координата</param>
+            <param name="Score">Количество очков за выстрел</param>
+            <returns>True если набрал очки, иначе false</returns>
+        </member>
+        <member name="M:Coursework.Targets.HumanTarget.CheckHearthShoot(System.Double,System.Double,System.Int32@)">
+            <summary>
+            Проверяет попал ли игрок в сердце и соответстующе изменяет количество очков
+            </summary>
+            <param name="X">Горизонтальная координата</param>
+            <param name="Y">Вертикальная координата</param>
+            <param name="Score">Количество очков за выстрел</param>
+            <returns>True если набрал очки, иначе false</returns>
+        </member>
+        <member name="T:Coursework.Targets.RoundTarget">
+            <summary>
+            Класс мишени "Круг"
+            </summary>
+        </member>
+        <member name="M:Coursework.Targets.RoundTarget.CheckHit(System.Double,System.Double,System.Int32@)">
+            <summary>
+            Проверяет попал ли игрок и в какой сектор, и соответстующе изменяет количество очков
+            </summary>
+            <param name="X">Горизонтальная координата</param>
+            <param name="Y">Вертикальная координата</param>
+            <param name="Score">Количество очков за выстрел</param>
+            <returns>True если набрал очки, иначе false</returns>
+        </member>
+        <member name="T:Coursework.Targets.Target">
+            <summary>
+            Прототип класса мишени
+            </summary>
+        </member>
+        <member name="M:Coursework.Targets.Target.GetScore(System.Double,System.Double)">
+            <summary>
+            Получает очки за выстрел
+            </summary>
+            <param name="X">Горизонтальная координата</param>
+            <param name="Y">Вертикальная координата</param>
+            <returns>Очки за выстрел</returns>
+        </member>
+        <member name="M:Coursework.Targets.Target.CheckRingHit(System.Double,System.Double,System.Int32,System.Double,System.Double,System.Double,System.Int32,System.Double)">
+            <summary>
+            Проверяет попал ли в определенный сектор мишени
+            </summary>
+            <param name="X">Горизонтальная координата</param>
+            <param name="Y">Вертикальная координата</param>
+            <param name="XShift">Горизонтальный сдвиг</param>
+            <param name="YShift">Вертикальный сдвиг</param>
+            <param name="XRadius">Горизонтальный радиус</param>
+            <param name="YRadius">Вертикальный радиус</param>
+            <param name="XCurve">Горизонтальная кривизна</param>
+            <param name="YCurve">Вертикальная кривизна</param>
+            <returns>True если попал, иначе false</returns>
+        </member>
+        <member name="M:Coursework.Targets.Target.GetTypeName">
+            <summary>
+            Возвращает название типа мишени
+            </summary>
+            <returns>Тип мишени</returns>
+        </member>
+        <member name="T:Coursework.Targets.TargetContext">
+            <summary>
+            Класс который хранит ссылку на объект Target
+            </summary>
+        </member>
+        <member name="M:Coursework.Targets.TargetContext.SetTarget(Coursework.Targets.Target)">
+            <summary>
+            Выбирает конкретную мишень (стратегию)
+            </summary>
+            <param name="Trg">Мишень которую нужно выбрать</param>
+        </member>
+        <member name="M:Coursework.Targets.TargetContext.GetScore(System.Double,System.Double)">
+            <summary>
+            Получает очки за выстрел
+            </summary>
+            <param name="X">Горизонтальная координата</param>
+            <param name="Y">Вертикальная координата</param>
+            <returns>Очки за выстрел</returns>
+        </member>
+        <member name="M:Coursework.Targets.TargetContext.CheckLackTarget">
+            <summary>
+            Проверяет отсутсвие мишени
+            </summary>
+            <returns>Отсутствует ли мишень</returns>
+        </member>
+        <member name="M:Coursework.Targets.TargetContext.GetTypeName">
+            <summary>
+            Возвращает название типа мишени
+            </summary>
+            <returns>Тип мишени</returns>
+        </member>
+        <member name="T:Coursework.Weapons.Pistol">
+            <summary>
+            Продукт - пистолет
+            </summary>
+        </member>
+        <member name="T:Coursework.Weapons.AssaultRifle">
+            <summary>
+            Продукт - Штурмовая винтовка
+            </summary>
+        </member>
+        <member name="T:Coursework.Weapons.SniperRifle">
+            <summary>
+            Продукт - снайпесркая винтовка
+            </summary>
+        </member>
+        <member name="T:Coursework.Weapons.Weapon">
+            <summary>
+            Абстрактный класс оружия (продукта)
+            </summary>
+        </member>
+        <member name="M:Coursework.Weapons.Weapon.GetHitCoordinates(System.Double@,System.Double@,System.Int32)">
+            <summary>
+            Изменяет координаты прицеливаня на координаты попадания
+            </summary>
+            <param name="X">Горизонтальная координата</param>
+            <param name="Y">Вертикальная координата</param>
+            <param name="Distance">Растояние до мишени</param>
+        </member>
+        <member name="M:Coursework.Weapons.Weapon.WeaponScatter(System.Double@,System.Double@,System.Int32)">
+            <summary>
+            Изменяет координаты в зависимости от кучности оружия
+            </summary>
+            <param name="X">Горизонтальная координата</param>
+            <param name="Y">Вертикальная координата</param>
+            <param name="Distance">Растояние до мишени</param>
+        </member>
+        <member name="M:Coursework.Weapons.Weapon.BulletBallistics(System.Double@,System.Int32)">
+            <summary>
+            Изменяет координату в зависимости от мощности оружия и растояния до мишени (баллистика)
+            </summary>
+            <param name="Y">Вертикальная координата</param>
+            <param name="Distance">Растояние до мишени</param>
+        </member>
+        <member name="M:Coursework.Weapons.Weapon.GetTypeName">
+            <summary>
+            Возвращает название типа оружия
+            </summary>
+            <returns>Тип оружия</returns>
+        </member>
+        <member name="T:Coursework.Weapons.WeaponFactory">
+            <summary>
+            Абстрактный класс фабрики оружия
+            </summary>
+        </member>
+        <member name="M:Coursework.Weapons.WeaponFactory.GetWeapon">
+            <summary>
+            Абстрактный фабричный метод
+            </summary>
+            <returns>Абстрактное оружие</returns>
+        </member>
+        <member name="T:Coursework.Weapons.PistolFactory">
+            <summary>
+            Класс фабрики пистолетов
+            </summary>
+        </member>
+        <member name="M:Coursework.Weapons.PistolFactory.GetWeapon">
+            <summary>
+            Реализация фабричного метода для пистолета
+            </summary>
+            <returns>Продукт - пистолет</returns>
+        </member>
+        <member name="T:Coursework.Weapons.AssaultRifleFactory">
+            <summary>
+            Класс фабрики штурмовых винтовок
+            </summary>
+        </member>
+        <member name="M:Coursework.Weapons.AssaultRifleFactory.GetWeapon">
+            <summary>
+            Реализация фабричного метода для штурмовой винтовки
+            </summary>
+            <returns>Продукт - штурмовая винтовка</returns>
+        </member>
+        <member name="T:Coursework.Weapons.SniperRifleFactory">
+            <summary>
+            Класс фабрики снайперских винтовок
+            </summary>
+        </member>
+        <member name="M:Coursework.Weapons.SniperRifleFactory.GetWeapon">
+            <summary>
+            Реализация фабричного метода для снайперской винтовки
+            </summary>
+            <returns>Продукт - снайперская винтовка</returns>
+        </member>
+    </members>
+</doc>
